@@ -1,0 +1,44 @@
+body{
+    display:flex;
+    height:90vh;
+    justify-content:center;
+    align-items:center;
+    background-image:url('https://parade.com/.image/t_share/MTkwNTgxNDM3MTgyMDU5NjQ1/live-life-like-game-of-chess-ftr.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#mybox{
+    margin-top: 50px;
+    margin-right:30%;
+    width:480px;
+    height:480px;
+    border:2px solid black;
+    display:flex;
+    flex-wrap:wrap;
+}
+#mybox>div{
+    width:60px;
+    height:60px;
+    cursor:pointer;
+}
+
+.black-boxes{
+    background-color:black;
+
+}
+
+.black-boxes:hover{
+    opacity:0.8;
+}
+
+.item-bg{
+    background-color: crimson;
+}
+.horse-bg{
+    background-image:url('https://freesvg.org/img/Chess-Knight.png');
+    background-color:aqua;
+    background-position:center;
+    background-size:contain;
+}

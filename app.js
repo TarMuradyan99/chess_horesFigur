@@ -27,3 +27,61 @@ function draw() {
         main++
     }
     document.querySelector(`#mybox`).innerHTML = boxes;
+    Array.from(document.querySelectorAll(`#mybox>div`)).map(el => {
+        el.addEventListener(`click`,
+            horseFigure
+        )
+    })
+}
+function horseFigure() {
+    Array.from(document.querySelectorAll(`.chess-boxes`)).map(el => {
+        el.classList.remove('item-bg');
+        el.classList.remove('horse-bg');
+    })
+    let x = this.dataset.x
+    let y = this.dataset.y
+    console.log(x + ' ' + y);
+    this.classList.add('item-bg');
+    if (+x + 2 < 8 && +x + 2 >= 0 && +y + 1 < 8 && +y + 1 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y + 1}"][data-x="${+x + 2}"]`).classList.add('horse-bg')
+    }
+    if (+x - 2 < 8 && +x - 2 >= 0 && +y + 1 < 8 && +y + 1 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y + 1}"][data-x="${+x - 2}"]`).classList.add('horse-bg')
+    }
+    if (+x + 2 < 8 && +x + 2 >= 0 && +y - 1 < 8 && +y - 1 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y - 1}"][data-x="${+x + 2}"]`).classList.add('horse-bg')
+    }
+    if (+x - 2 < 8 && +x - 2 >= 0 && +y - 1 < 8 && +y - 1 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y - 1}"][data-x="${+x - 2}"]`).classList.add('horse-bg')
+    }
+    if (+x + 1 < 8 && +x + 2 >= 0 && +y + 1 < 8 && +y + 2 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y + 2}"][data-x="${+x + 1}"]`).classList.add('horse-bg')
+    }
+    if (+x - 1 < 8 && +x - 1 >= 0 && +y + 2 < 8 && +y + 2 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y + 2}"][data-x="${+x - 1}"]`).classList.add('horse-bg')
+    }
+    if (+x + 1 < 8 && +x + 1 >= 0 && +y - 2 < 8 && +y - 2 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y - 2}"][data-x="${+x + 1}"]`).classList.add('horse-bg')
+    }
+    if (+x - 1 < 8 && +x - 1 >= 0 && +y - 2 < 8 && +y - 2 >= 0) {
+        document.querySelector(`.chess-boxes[data-y="${+y - 2}"][data-x="${+x - 1}"]`).classList.add('horse-bg')
+    }
+
+
+}
+
+
+draw()
+
+
+
+let combinations = [
+    [2,1],
+    [-2,1],
+    [2,-1],
+    [-2,-1],
+    [1,2],
+    [-1,2],
+    [1,-2],
+    [-1,-2],
+]
